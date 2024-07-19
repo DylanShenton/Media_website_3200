@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DredgedFilm.com/News</title>
+  <link rel="stylesheet" href="Style.css">
+  <script src="Script.js"></script>
+</head>
+<body>
+<div id="pip" style="transition: all 0.2s; scale: 0; z-index: 1000; top:5vw; position: fixed; width: 100vw; display: flex; align-items: center; justify-content: center; flex-direction: row;">
+  <div style="transition: all 0.2s; width: 70vw; height: 70vh; background-color: black; z-index: 1000;">
+    <video id="video" src="Images/audio.webm" controls style="width: 100%;"></video>
+    <img onclick="play(1)" src="Images/x.png" alt="exit" style="transition: all 0.2s; width: 2vw; position: absolute; left:82vw; top:0.1vw;">
+  </div>
+</div>
+<div style="top:-8vw; position: absolute;">
+    <img src="Images/lake.JPG" alt="bg" style="transition: all 0.2s; z-index: -1; position: absolute; top:0px; width: 100vw;">
+</div>
+<div style="transition: all 0.2s; justify-content:center; align-items: center; display: flex; flex-direction: row; width:100%; top:8vw; position: absolute;">
+  <div id="title" style="transition: all 0.2s; z-index: 100; transition: height 1s, color 1s, background-color 1s, top 0.5s; color:#ffffff; font-family: PT Mono, monospace; font-size: 7vw; font-weight:bolder; text-align:center; height: 10vw; width: 100%; background-color: transparent;">News</div>
+
+</div>
+<!-- <img src="Images/water.png" alt="water" style="z-index: -2; position: absolute; filter:brightness(90%); filter:opacity(0%);"> -->
+<div style="transition: all 0.2s; top:25vw; position: absolute;" id="body">
+<div style="transition: all 0.2s; height: 60px;">
+  <div style="transition: all 0.2s; left:0px; position: absolute; height: 80vw;">
+    <div id="navbar" class="navbar" style="transition: all 0.2s; z-index: 99; box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.234); align-items: center; transition: border-radius 10s, width 0.2s, background-color 0.4s, rotate 0.2s, scale 0.5s; rotate: 0deg; scale:0.9; display: flex; justify-content: space-between; top:0; background-color: rgb(144, 144, 144); width: 100vw; height: 5vw; position: sticky;">
+      <div style=" height:10px; width: 20vw;"></div>
+      <div id="button_7" onclick="clicked_nav(7)" class="option">Home</div>
+      <div id="button_2" onclick="clicked_nav(2)" class="option">Store</div>
+      <div style="transition: all 0.2s; user-select: none; color:#23001E;  font-family: 'Trebuchet MS', sans-serif; font-weight: bolder; font-size: 2vw;">|</div>
+      <img onclick="home()" style="height:4vw;" src="Images/title.png" alt="title">
+      <div style="transition: all 0.2s; user-select: none; color:#23001E;  font-family: 'Trebuchet MS', sans-serif; font-weight: bolder; font-size: 2vw;">|</div>
+      <div id="button_5" onclick="clicked_nav(5)"class="option">Film</div>
+      <div id="button_6" onclick="clicked_nav(6)"class="option">More</div>
+      <div style=" height:10px; width: 20vw;"></div>
+    </div>
+  </div>
+</div>
+  <!-- <div style="height: 10vw;"></div> -->
+  <div style="transition: all 0.2s; display: flex; justify-content: center; width: 100%;">
+  <div style="transition: all 0.2s; width: 15vw; background-color: rgba(0, 0, 0, 0); height: 70vw;"></div>
+  <table style="transition: all 0.2s; width: 70vw;">
+    <tr>
+      <!-- rowspan/colspan -->
+      <th style="height:20vw;  width:33vw;" colspan="2">
+        <div class="article2">
+          <h1 class="coverline">Behind The Scenes - Pulling back the curtain on SFX</h1>
+          <h1 style="transition: all 0.2s; width:80%; text-align: center;" class="extention">
+            Look at how our practical effects team brought the film to life with shots before and after visual effects and the techniques used to create your favourite scenes, learn how to get started creating your own vfx and sfx shots
+          </h1>
+          <img src="Images/green_screen.jpg" alt="bhs" style="transition: all 0.2s; width:90%; padding: 2vw;">
+          <h1 style="transition: all 0.2s; width:80%; text-align: end;" class="extention">15th October 2024</h1>
+        </div>
+      </th>
+      
+      <th style="transition: all 0.2s; height:20vw;  width:33vw;" >
+        <div class="article2">
+          <h1 class="coverline">Pictures From The Premiere</h1>
+          <h1 style="transition: all 0.2s; width:80%;" class="extention">
+            The Dredged Premiere Was Today, view all the photos from the event here on the Dredged website
+          </h1>
+          <img src="Images/Premire.jpg" alt="cover" style="width:60%; padding: 2vw;">
+          <h1 style="transition: all 0.2s; width:80%; text-align: end;" class="extention">2nd October 2024</h1>
+        </div>
+      </th>
+      <th style="transition: all 0.2s; height:20vw;  width:33vw;" >
+        <div class="article2">
+          <h1 class="coverline">Dredged Now Out On DVD</h1>
+          <h1 style="transition: all 0.2s; width:80%;" class="extention">
+            Order the Dredged DVD today online, buy on the Dredged website for free extra scenes and actor interviews only £20 for this collectors edition but only while stocks last
+          </h1>
+          <img src="Images/dvd.jpg" alt="dvd" style="width:80%; padding: 2vw;">
+          <h1 style="transition: all 0.2s; width:80%; text-align: end;" class="extention">1st Febuary 2025</h1>
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <th style="transition: all 0.2s; height:20vw;  width:33vw;" >
+        <div class="article2">
+          <h1 class="coverline">Bid On Official Film Props</h1>
+          <h1 style="transition: all 0.2s; width:80%;" class="extention">Online auction being held on November 1st with dredged official film props including the coat pictured below and many more, own your own piece of the film, each purchase comes with a glass display case and a letter from  the director
+          </h1>
+          <img src="Images/prop2.jpg" alt="sky" style="width:90%; padding: 2vw;">
+          <h1 style="transition: all 0.2s; width:80%; text-align: end;" class="extention">20th September 2024</h1>
+        </div>
+      </th>
+      <th style="transition: all 0.2s; height:20vw;  width:33vw;" >
+        <div class="article2">
+          <h1 class="coverline">Interveiw With Dylan Shenton</h1>
+          <h1 style="transition: all 0.2s; width:80%;" class="extention">Audio from an interview with Dylan Shenton at the premiere of dredged released on our podcast, new episodes every week</h1>
+          <h1 class="coverline"></h1>
+          <img onclick="play(0)" src="Images/audio.png" alt="audio" style="z-index: 2; width:30%; padding: 2vw; border-color: rgb(255, 255, 255); border-width: 1px; border-style: solid;">
+          <h1 class="coverline"></h1>
+          <h1 style="transition: all 0.2s; width:80%; text-align: end;" class="extention">5th October 2024</h1>
+        </div>
+      </th>
+      <th style="transition: all 0.2s; height:20vw;  width:33vw;" >
+        <div class="article2">
+          <h1 class="coverline">Meet Other Dredged Fans Online</h1>
+          <h1 style="transition: all 0.2s; width:80%;" class="extention">Meet other fans of the film in our online chat available here with voice channels available and giveaways starting at the release of the film including official film props</h1>
+        <div style="height: 10%;"></div>
+          <div style="border-radius:10px; width: 70%; padding: 0.5vw; background-color: #5a5a5a; color:#ffffff; font-family: PT Mono, monospace; font-size: 0.6vw; font-weight:bolder;">Click Here To Join</div>
+          <div style="height: 40%;"></div>
+        </div>
+      </th>
+      <th style="transition: all 0.2s; height:20vw;  width:33vw;" rowspan="2"  >
+        <div class="article2" style="justify-content: space-between;">
+          <h1 class="coverline">Buy Our Official Merchandise</h1>
+          <h1 style="transition: all 0.2s; width:80%;" class="extention">Limited time only buy a Dredged themed T-shirt, hoodie and much more with free delivery to the USA and UK, Wear to cinema for 10% off ticket prices</h1>
+        <div style="transition: all 0.2s; height: 100%; display: flex; justify-content: center; flex-direction: column;">
+          <img src="Images/merches2.jpg" alt="merch" style="width:70%; padding: 2vw;">
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <th style="transition: all 0.2s; height:20vw;  width:33vw;" >
+        <div class="article2">
+          <h1 class="coverline">New Dredged Podcast</h1>
+          <h1 style="transition: all 0.2s; width:80%;" class="extention">For more dredged news and interviews with stars listen to out podcast, new episodes each week and our 12 week back catalogue of episodes</h1>
+          <img src="Images/podcast2.jpg" alt="sky" style="width:70%; padding: 2vw;">
+          <h1 style="transition: all 0.2s; width:80%; text-align: end;" class="extention">5th September 2024</h1>
+        </div>
+        
+      </th>
+      <th style="transition: all 0.2s; height:20vw;  width:33vw;" colspan="2" >
+        <div class="article2">
+          <h1 class="transition: all 0.2s; coverline">Visit the locations of your favorite scenes</h1>
+          <h1 style="transition: all 0.2s; width:80%;" class="extention">Visit the lakes that dredged was filmed at and recreate your favourite scenes. Dredged was filmed in a variety of lakes in England and Scotland visit them on your next road trip</h1>
+          <img src="Images/sunset.JPG" alt="sunset" style="width:70%; padding: 2vw;">
+          <h1 style="transition: all 0.2s; width:80%; text-align: end;" class="extention">12th September 2024</h1>
+        </div>
+      </th>
+ 
+    </tr>
+
+  </table>
+  <div style="transition: all 0.2s; width: 15vw; background-color: rgba(0, 0, 0, 0); height: vw;">
+</div></div>
+<div style="transition: all 0.2s; width: 100vw; height: 5vw;"></div>
+<div style="transition: all 0.2s; align-items: center; flex-direction: column; display: flex; justify-content:center; width: 100vw; height: 10vw; background-color: rgb(0, 0, 0); padding-bottom: 7vw;">
+  <img src="Images/social_meds.jpg" alt="links" style="width:25vw;">
+</div>
+</body>
+</html>
